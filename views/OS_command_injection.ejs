@@ -11,10 +11,18 @@
 </head>
 <body>
   <h1>OS Command Injection</h1>
-  <form id="commandForm" action="/os_command_injection/result" method="GET">
-    <label for="command">Command:</label>
-    <input type="text" id="command" name="command">
-    <button><a href="#" class="btn btn-link my-2 my-sm-0" onclick="document.getElementById('commandForm').submit(); return false;">Submit</a></button>
-  </form>
+  <input type="text" id="commandInput" value="">
+
+  <a href="/os_command_injection/result?command=" id="commandLink">Submit</a>
+  
+  <script>
+    document.getElementById('commandInput').addEventListener('input', function() {
+      const inputValue = this.value;
+      const targetUrl = `/os_command_injection/result?command=${(inputValue)}`;
+      
+      document.getElementById('commandLink').setAttribute('href', targetUrl);
+    });
+  </script>
+  
 </body>
 </html>

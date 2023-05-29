@@ -21,8 +21,4 @@ router.get('/result', (req, res) => {
   });
 });
 
-router.get('/result', (req, res) => {
-  res.render('OS_command_injection_result.ejs');
-});
-
 module.exports = router;
