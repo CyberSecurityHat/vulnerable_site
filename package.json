@@ -1,25 +1,26 @@
 {
-  "name": "vulnerable_site",
-  "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
-  "scripts": {
-    "start": "nodemon app"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/CyberSecurityHat/vulnerable_site.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/CyberSecurityHat/vulnerable_site/issues"
-  },
-  "homepage": "https://github.com/CyberSecurityHat/vulnerable_site#readme",
-  "dependencies": {
-    "ejs": "^3.1.9",
-    "express": "^4.18.2",
-    "iconv-lite": "^0.6.3",
-    "nodemon": "^2.0.22"
-  }
+    "name": "vulnerable_site",
+    "version": "1.0.0",
+    "description": "",
+    "main": "app.js",
+    "scripts": {
+        "start": "nodemon app"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/CyberSecurityHat/vulnerable_site.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/CyberSecurityHat/vulnerable_site/issues"
+    },
+    "homepage": "https://github.com/CyberSecurityHat/vulnerable_site#readme",
+    "dependencies": {
+        "ejs": "^3.1.9",
+        "express": "^4.18.2",
+        "iconv-lite": "^0.6.3",
+        "nodemon": "^2.0.22",
+        "sqlite3": "^5.0.2"
+    }
 }
