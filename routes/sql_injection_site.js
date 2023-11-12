@@ -1,11 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const { Sequelize } = require('sequelize');
+const { sequelize } = require("../models");
 const router = express();
-
-const sequelize = new Sequelize('mysql://root:root@localhost:3306/vuln_site', {
-  logging: console.log
-});
 
 router.set('view engine', 'ejs');
 
