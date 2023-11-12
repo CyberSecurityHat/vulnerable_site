@@ -4,7 +4,6 @@ const { Model } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
-    // 관계 등을 정의할 수 있습니다.
   };
 
   User.init({
@@ -13,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'User',
-    tableName: 'users', // 실제 테이블 이름
+    tableName: 'users',
     timestamps: false
   });
 
