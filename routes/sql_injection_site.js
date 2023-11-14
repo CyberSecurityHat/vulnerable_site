@@ -13,21 +13,26 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-    const username = req.body.username;
-    const password = req.body.password;
-    const query = `SELECT * FROM users WHERE username = '${username}' AND password = '${password}'`;
+  const username = req.body.username;
+  const password = req.body.password;
 
-    sequelize.query(query, { type: sequelize.QueryTypes.SELECT })
-      .then(users => {
-        if (users.length > 0) {
-          res.redirect(`/sql_injection?message=${encodeURIComponent(`Welcome, ${users[0].username}!`)}`);
-        } else {
-          res.redirect('/sql_injection?message=' + encodeURIComponent('Invalid username or password.'));
-        }
-      })
-      .catch(err => {
-        res.redirect('/sql_injection?message=' + encodeURIComponent('Error encountered while logging in.'));
-      });
+  if (!username || !password) {
+      return res.redirect('/sql_injection?message=' + encodeURIComponent('Username and password must be provided.'));
+  }
+
+  const query = `SELECT * FROM users WHERE username = '${username}' AND password = '${password}'`;
+
+  sequelize.query(query, { type: sequelize.QueryTypes.SELECT })
+    .then(users => {
+      if (users.length > 0) {
+        res.redirect(`/sql_injection?message=${encodeURIComponent(`Welcome, ${users[0].username}!`)}`);
+      } else {
+        res.redirect('/sql_injection?message=' + encodeURIComponent('Invalid username or password.'));
+      }
+    })
+    .catch(err => {
+      res.redirect('/sql_injection?message=' + encodeURIComponent('Error encountered while logging in.'));
+    });
 });
 
 module.exports = router;
